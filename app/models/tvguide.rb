@@ -8,11 +8,10 @@ class Tvguide < ApplicationRecord
 		
 		url = URI.parse(Tvguide.get_tv_guide_app_url()+'/tvguide/get?start='+start)
 		req = Net::HTTP::Get.new(url.to_s)
-		http.use_ssl = true
-		res = Net::HTTP.start(url.host, url.port) {|http|
-		  http.request(req)
-		}
+		http = Net::HTTP.new(url.host, url.port)
+		http.use_ssl = (url.scheme == "https")
+		response = http.request(req)
 
-		return res.body
+		return response.body
 	end
 end
