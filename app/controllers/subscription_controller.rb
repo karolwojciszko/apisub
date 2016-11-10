@@ -69,7 +69,7 @@ class SubscriptionController < ApplicationController
 	begin
 		show_params
 	rescue Exception => e
-   		return render :json => Settings.getError(3).to_json, :status => Settings.getError(3)["status"]
+   		return render :json => Settings.getError(1).to_json, :status => Settings.getError(3)["status"]
 	end
 
 	token = Token.where(:token => params[:token]).first
