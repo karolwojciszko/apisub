@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'general/error'
 
   get 'auth/login'
+  root 'auth#login'
 end
