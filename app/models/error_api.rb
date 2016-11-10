@@ -1,0 +1,2 @@
+class ErrorApi < ApplicationRecord
+end
