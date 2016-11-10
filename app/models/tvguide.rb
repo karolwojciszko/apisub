@@ -1,6 +1,6 @@
 class Tvguide < ApplicationRecord
 	def self.get_tv_guide_app_url()
-		return "http://localhost:3001"
+		return "https://apitv.herokuapp.com"
 	end
 
 	def self.guidetv_get(start)
