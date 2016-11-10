@@ -81,7 +81,7 @@ class SubscriptionController < ApplicationController
 	show = Show.find_by_id(params[:show_id])
 	
 	if show.nil?
-		return render :json => Settings.getError(1).to_json, :status => Settings.getError(3)["status"]
+		return render :json => Settings.getError(3).to_json, :status => Settings.getError(3)["status"]
 	end
 
 	user = User.find_by_id(Token.joins(:user).select("users.id"))
