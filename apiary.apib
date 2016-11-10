@@ -1,0 +1,504 @@
+FORMAT: 1A
+HOST: https://apisub.herokuapp.com/
+
+# Apisub
+
+Apisub it's API where you can make subscribe on channel or particular show. You can also remove your subscription or get TV guide.
+
+## Authentication [/auth/login{?username,password}]
+
+### Login [GET]
+
++ Parameters
+    + username (string) - your username
+    + password (string) - your secret password
+    
++ Response 200 (application/json)
+
+        [
+            {
+              "id": 2,
+              "user_id": 1,
+              "expired": "2016-11-10T20:50:14.800Z",
+              "token": "e3db49e1796404ef4c639c24270368a8",
+              "created_at": "2016-11-10T18:50:14.810Z",
+              "updated_at": "2016-11-10T18:50:14.810Z"
+            }
+        ]
+
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Missing parameters. Check documentation",
+              "label": "MISSING_PARAMS"
+            }
+        ]
+
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Value of your params is incorrect",
+              "label": "WRONG_PARAMS"
+            }
+        ]
+## Get TV guide [/tvguide/get{?token,start}]
+### get [GET]
++ Parameters 
+    + token (string) - your secret key
+    + start (optional,date) - start date for tv guide. F.e: 2016-12-01
+    
++ Response 200 (application/json)
+
+        [
+            {
+            "id": 1,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-01T08:00:00.000Z",
+            "show_stop": "2016-12-01T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 2,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-02T08:00:00.000Z",
+            "show_stop": "2016-12-02T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 3,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-03T08:00:00.000Z",
+            "show_stop": "2016-12-03T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 4,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-04T08:00:00.000Z",
+            "show_stop": "2016-12-04T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 5,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-05T08:00:00.000Z",
+            "show_stop": "2016-12-05T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 6,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-06T08:00:00.000Z",
+            "show_stop": "2016-12-06T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 7,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-07T08:00:00.000Z",
+            "show_stop": "2016-12-07T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 8,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-08T08:00:00.000Z",
+            "show_stop": "2016-12-08T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 9,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-09T08:00:00.000Z",
+            "show_stop": "2016-12-09T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          },
+          {
+            "id": 10,
+            "show_id": 1,
+            "channel_id": 1,
+            "channel_name": "TV1",
+            "show_name": "show1",
+            "show_start": "2016-12-10T08:00:00.000Z",
+            "show_stop": "2016-12-10T08:30:00.000Z",
+            "category_show_id": 1,
+            "category_show_name": "Sport",
+            "category_channel_id": 1,
+            "category_channel_name": "Sport"
+          }
+        ]
+
++ Response 401 (application/json)
+
+        [
+            {
+              "status": 401,
+              "message": "You are not authorized to call this action",
+              "label": "ACCESS_DENIED"
+            }
+        ]
+      
+## Get your subscriptions [/subscription/get{?token}]
+### get [GET]
++ Parameters 
+    + token (string) - your secret key
+    
++ Response 200 (application/json)
+
+        [
+            {
+            "id": 2,
+            "user_id": 1,
+            "channel_id": 1,
+            "show_id": 2,
+            "created_at": "2016-11-10T15:16:57.741Z",
+            "updated_at": "2016-11-10T15:16:57.741Z"
+          },
+          {
+            "id": 3,
+            "user_id": 1,
+            "channel_id": 1,
+            "show_id": 3,
+            "created_at": "2016-11-10T15:16:57.749Z",
+            "updated_at": "2016-11-10T15:16:57.749Z"
+          },
+          {
+            "id": 7,
+            "user_id": 1,
+            "channel_id": 1,
+            "show_id": 1,
+            "created_at": "2016-11-10T15:38:26.674Z",
+            "updated_at": "2016-11-10T15:38:26.674Z"
+          },
+          {
+            "id": 8,
+            "user_id": 1,
+            "channel_id": 4,
+            "show_id": 8,
+            "created_at": "2016-11-10T15:40:39.834Z",
+            "updated_at": "2016-11-10T15:40:39.834Z"
+          },
+          {
+            "id": 9,
+            "user_id": 1,
+            "channel_id": 4,
+            "show_id": 9,
+            "created_at": "2016-11-10T15:40:39.853Z",
+            "updated_at": "2016-11-10T15:40:39.853Z"
+          },
+          {
+            "id": 10,
+            "user_id": 1,
+            "channel_id": 4,
+            "show_id": 10,
+            "created_at": "2016-11-10T15:40:39.874Z",
+            "updated_at": "2016-11-10T15:40:39.874Z"
+          }
+        ]
+
++ Response 401 (application/json)
+
+        [
+            {
+              "status": 401,
+              "message": "You are not authorized to call this action",
+              "label": "ACCESS_DENIED"
+            }
+        ]
+
+        
+## Add channel to subscriptions [/subscription/addchannel{?token,channel_id}]
+
+### addchannel [GET]
+    
++ Parameters
+    + token (string) - your secret key
+    + channel_id (integer) - ID of channel
+    
++ Response 200 (application/json)
+
+        [
+             {
+                "status": "true"
+              }   
+        ]
+
++ Response 200 (application/json)
+
+        [
+             {
+              "status": 200,
+              "message": "Value of your params is incorrect",
+              "label": "WRONG_PARAMS"
+            }   
+        ]
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Missing parameters. Check documentation",
+              "label": "MISSING_PARAMS"
+            } 
+        ]
++ Response 401 (application/json)
+
+        [
+            {
+              "status": 401,
+              "message": "You are not authorized to call this action",
+              "label": "ACCESS_DENIED"
+            }
+        ]
+
+## Add show to subscriptions [/subscription/addshow{?token,show_id}]
+
+### addshow [GET]
+    
++ Parameters
+    + token (string) - your secret key
+    + show_id (integer) - ID of show
+    
++ Response 200 (application/json)
+
+        [
+             {
+                "status": "true"
+              }   
+        ]
+
++ Response 200 (application/json)
+
+        [
+             {
+              "status": 200,
+              "message": "Value of your params is incorrect",
+              "label": "WRONG_PARAMS"
+            }   
+        ]
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Missing parameters. Check documentation",
+              "label": "MISSING_PARAMS"
+            } 
+        ]
++ Response 200 (application/json)
+
+        [
+             {
+              "status": 200,
+              "message": "This show/channel already is in your subscription",
+              "label": "ALREADY_EXISTS"
+            }   
+        ]  
++ Response 401 (application/json)
+
+        [
+            {
+              "status": 401,
+              "message": "You are not authorized to call this action",
+              "label": "ACCESS_DENIED"
+            }
+        ]
+## Remove channel from subscriptions [/subscription/removechannel{?token,channel_id}]
+
+### removechannel [GET]
+    
++ Parameters
+    + token (string) - your secret key
+    + channel_id (integer) - ID of channel
+    
++ Response 200 (application/json)
+
+        [
+             {
+                "status": "true"
+              }   
+        ]
+
++ Response 200 (application/json)
+
+        [
+             {
+              "status": 200,
+              "message": "Value of your params is incorrect",
+              "label": "WRONG_PARAMS"
+            }   
+        ]
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Missing parameters. Check documentation",
+              "label": "MISSING_PARAMS"
+            } 
+        ]
++ Response 401 (application/json)
+
+        [
+            {
+              "status": 401,
+              "message": "You are not authorized to call this action",
+              "label": "ACCESS_DENIED"
+            }
+        ]
+## Remove show from subscriptions [/subscription/removeshow{?token,show_id}]
+
+### removeshow [GET]
+    
++ Parameters
+    + token (string) - your secret key
+    + show_id (integer) - ID of show
+    
++ Response 200 (application/json)
+
+        [
+             {
+                "status": "true"
+              }   
+        ]
+
++ Response 200 (application/json)
+
+        [
+             {
+              "status": 200,
+              "message": "Value of your params is incorrect",
+              "label": "WRONG_PARAMS"
+            }   
+        ]
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Missing parameters. Check documentation",
+              "label": "MISSING_PARAMS"
+            } 
+        ]
++ Response 401 (application/json)
+
+        [
+            {
+              "status": 401,
+              "message": "You are not authorized to call this action",
+              "label": "ACCESS_DENIED"
+            }
+        ]
+## List of errors [/]
+
+### WRONG_PARAMS [GET]
+
++ Response 200 (application/json)
+
+        [
+             {
+              "status": 200,
+              "message": "Value of your params is incorrect",
+              "label": "WRONG_PARAMS"
+            }   
+        ]
+        
+### ALREADY_EXISTS [GET]
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "This show/channel already is in your subscription",
+              "label": "ALREADY_EXISTS"
+            } 
+        ]
+### MISSING_PARAMS [GET]
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Missing parameters. Check documentation",
+              "label": "MISSING_PARAMS"
+            } 
+        ]
+
+### UNEXPECTED_ERROR [GET]
++ Response 200 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "Unexpected error",
+              "label": "UNEXPECTED_ERROR"
+            } 
+        ]
+### ACCESS_DENIED [GET]
++ Response 401 (application/json)
+
+        [
+            {
+              "status": 200,
+              "message": "You are not authorized to call this action",
+              "label": "ACCESS_DENIED"
+            } 
+        ]
