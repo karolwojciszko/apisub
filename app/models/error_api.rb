@@ -1,2 +1,0 @@
-class ErrorApi < ApplicationRecord
-end
